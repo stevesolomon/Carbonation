@@ -6,6 +6,7 @@ BlockBlacklistedUsers();
 function AddFilterMeButton() {
     var userId = GetUserId();
     var url = document.location + '&u=' + userId;
+    url = url.replace(/\&page=\d{1,3}/i, '');
     var infobar = document.querySelector('.infobar');
     var filterMeButton = document.createElement('a');
     filterMeButton.href = url;
